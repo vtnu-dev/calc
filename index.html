@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator walut</title>
+    <title>Kalkulator Revolut</title>
     <style>
         *{
     box-sizing: border-box;
@@ -114,14 +114,14 @@ input[type]:focus, select:focus{
     width: 30px;
 }
 }
-@media (min-width: 520px) and (max-width: 1024px){
+@media (min-width: 520px) and (max-width: 812px){
     .main{
         padding-bottom: 0;
         font-size: 80%;
     }
     .left{
-        padding-top: 10px;
-        font-size: 70%;
+        padding-top: 20px;
+        font-size: 80%;
         height: 50vh;
     }
     .header {
@@ -130,11 +130,11 @@ input[type]:focus, select:focus{
     .bottom{
         padding-top: 0px;
         height: 70vh;
-        font-size: 70%;
+        font-size: 80%;
     }
     .hajs{
         font-size: 200%;
-        line-height: 60px;
+        line-height: 40px;
     }
     img{
     width: 30px;
@@ -142,7 +142,7 @@ input[type]:focus, select:focus{
 }
     </style>
 </head>
-<body>
+<body style="min-width: 300px;">
     <div class="header">
         <h1>Kalkulator walut <img src="https://c7.uihere.com/files/876/446/427/revolut-blog-monzo-bank-drupal-bank.jpg" alt="logo"></h1>
         
@@ -167,7 +167,7 @@ input[type]:focus, select:focus{
         <p><span class="hajs">Ile masz hajsu?  </span>
             BTC/USD/PLN: <input type="number" name="" id="volume" placeholder=" wprowadź kwotę"></p><br><br>
             <button id="btn">OBLICZ</button><br><br>
-            <p id="wynik" class="hajs" style="line-height: 40px;"></p>
+            <p id="wynik" class="hajs" style="line-height: 45px;"></p>
     </div>
 </body>
 <script>
@@ -186,7 +186,7 @@ input[type]:focus, select:focus{
         if (buy && bitcoin && rate && volume) {
             koszt = volume/rate2+" btc";
         } else if(buy && dolar && rate && volume){
-            koszt = volume/rate2+" $";
+            koszt = volume/rate+" $";
         }
           else if(sell && bitcoin && rate && volume) {
               if (rate>20000) {
@@ -196,7 +196,7 @@ input[type]:focus, select:focus{
               }
         } else if(sell && dolar && rate && volume){
             if (rate>=0.001) {
-                koszt = volume*rate1+" zł";
+                koszt = volume*rate+" zł";
             } else {
                 koszt = volume*rate1+" btc";
             }
